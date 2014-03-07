@@ -24,9 +24,7 @@ module.exports = {
   //_config: {} 	this line mark off by 弘彬
 
   'new' : function (req, res) {
-  	res.locals.flash = _.clone(req.session.flash);
   	res.view();
-  	req.session.flash = {};
   },
 
   'create' : function (req, res, next) {
@@ -51,7 +49,6 @@ module.exports = {
 	      // After successfully creating the user
 	      // redirect to the show action
 	      res.json(user); 
-	      req.session.flash = {};
 	  });
 	}
 };

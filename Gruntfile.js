@@ -58,6 +58,8 @@ module.exports = function (grunt) {
 
     // *->    put other dependencies here   <-*
     'linker/js/jquery-1.11.0.js',
+    'linker/js/jquery-migrate-1.2.1.js',
+    'linker/js/jquery.validate.js',
     
     // All of the rest of your app scripts imported here
     'linker/**/*.js'
