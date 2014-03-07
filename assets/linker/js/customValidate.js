@@ -1,6 +1,6 @@
 $(function(){
 
-	$('.form-signin').validate({
+	$('#sign-up-form').validate({
 		rules: {
 			name:{
 				required: true
