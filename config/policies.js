@@ -19,12 +19,13 @@ module.exports.policies = {
   '*': 'flash',
 
   user: {
-  	'new': "flash",
-  	create: "flash",
-  	show: "userCanSeeProfile",
-  	edit: "userCanSeeProfile",
-  	update: "userCanSeeProfile",
-  	'*': "admin"
+  	'new' : 'flash',	//指這個action只聽 flash，不會聽 isAuthenticated
+  	'create' : 'flash', //指這個action只聽 flash，不會聽 isAuthenticated，的確邏輯上建立帳號是在還未授權的情況下建立
+  	'subscribe' : ['flash', 'authenticated'],
+  	'show' : ['authenticated','userCanSeeProfile'],
+  	'edit' : ['authenticated','userCanSeeProfile'],
+  	'update' : ['authenticated','userCanSeeProfile'],
+  	'*' : 'admin'
   }
 
   /*
